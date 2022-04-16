@@ -7,9 +7,17 @@ class StorageBoxHacks < Project
     {}
   end
 
+  # for bigger part strips that can fold
   def smd_strip_top
     SmdStripTop.new(config)
   end
+
+  # for resistors, etc
+  def smd_dispenser
+    SmdDispenser.new(config)
+  end
+
+  # jenncad-append-project-magic
 
 end
 
