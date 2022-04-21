@@ -17,6 +17,14 @@ class StorageBoxHacks < Project
     SmdDispenser.new(config)
   end
 
+
+  def mathtest
+    Mathtest.new(config)
+  end
+
+  def pathtest
+    Pathtest.new(config)
+  end
   # jenncad-append-project-magic
 
 end
