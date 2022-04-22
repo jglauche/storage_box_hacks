@@ -1,18 +1,18 @@
 module SmdStripTop(){
   translate([0, 0, 34])rotate([0, 180, 0])difference(){
-        union()hull(){
-            translate([-22, 48, 0])cylinder(d=5,h=34,$fn=64);
-            translate([22, 48, 0])cylinder(d=5,h=34,$fn=64);
-            translate([-22, -48, 0])cylinder(d=5,h=34,$fn=64);
-            translate([22, -48, 0])cylinder(d=5,h=34,$fn=64);
-          }
+        translate([-24.5, -50.5, 0])union()translate([2.5, 2.5, 0])hull(){
+                cylinder(d=5,h=34,$fn=64);
+                translate([44, 0, 0])cylinder(d=5,h=34,$fn=64);
+                translate([0, 96, 0])cylinder(d=5,h=34,$fn=64);
+                translate([44, 96, 0])cylinder(d=5,h=34,$fn=64);
+              }
 
-        translate([0, 0, -0.002])union()hull(){
-              translate([-21.4, 46.75, 0])cylinder(d=5,h=31.008000000000003,$fn=64);
-              translate([21.4, 46.75, 0])cylinder(d=5,h=31.008000000000003,$fn=64);
-              translate([-21.4, -46.75, 0])cylinder(d=5,h=31.008000000000003,$fn=64);
-              translate([21.4, -46.75, 0])cylinder(d=5,h=31.008000000000003,$fn=64);
-            }
+        translate([-23.9, -49.25, 0])translate([0, 0, -0.002])union()translate([2.5, 2.5, 0])hull(){
+                  cylinder(d=5,h=31.008000000000003,$fn=64);
+                  translate([42.8, 0, 0])cylinder(d=5,h=31.008000000000003,$fn=64);
+                  translate([0, 93.5, 0])cylinder(d=5,h=31.008000000000003,$fn=64);
+                  translate([42.8, 93.5, 0])cylinder(d=5,h=31.008000000000003,$fn=64);
+                }
 
         translate([-8.6, -8.6, 0])translate([0, 32, 33])rotate([-30, 0, 0])cube([17.2, 17.2, 6.0]);
         translate([0, -10, 28.1])mirror([0, 1, 0])mirror([1, 0, 0])union(){
@@ -31,4 +31,4 @@ module SmdStripTop(){
       }
 }
 $fn=64;
-color("HotPink")SmdStripTop();
+color("OrangeRed")SmdStripTop();
