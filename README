@@ -1,0 +1,14 @@
+Files to hack storage box containers to fit specific parts
+
+"Allit EuroPlus Flex",  item no. 457202
+
+output/smd_dispenser.stl fits 10mm tape width passives.
+Optional magnet base: two 5x10mm magnets, use 3M VHB tape to fixate them (I'm using 3M VHB 5952).
+
+to edit the files, you need a ruby and rubygems installation (2.6+):
+gem install jenncad --pre
+
+
+LICENSE: CC BY-SA 4.0
+https://creativecommons.org/licenses/by-sa/4.0/
+
