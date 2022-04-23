@@ -14,9 +14,12 @@ class StorageBoxHacks < Project
 
   # for resistors, etc
   def smd_dispenser
-    SmdDispenser.new(config)
+    SmdDispenser.new({ strip_w: 0.6  })
   end
 
+  def smd_dispenser_10mm_bigger_parts
+    SmdDispenser.new({ strip_w: 1.55 })
+  end
 
   def mathtest
     Mathtest.new(config)

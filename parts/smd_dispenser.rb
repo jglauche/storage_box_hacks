@@ -3,22 +3,23 @@ class SmdDispenser < Part
   def initialize(opts={})
     @opts = opts
     @strip_h = 10
-    @strip_w = 2.5
-    @strip_w_upper_guide = 1.2
-    @strip_w_smaller = 1.0
+    @strip_w_actual = opts[:strip_w]
+    @strip_w_smaller = @strip_w_actual + 0.4
+    @strip_w_upper_guide = @strip_w_smaller + 0.2
+    @strip_w = @strip_w_smaller + 1.9
     @side_wall = 1.5
     @outer_wall = 1.0
     @box = {x: 101, y: 43.1, z: @strip_h }
     @bottom = {x: @box[:x], y: @box[:y], z: 1.6}
-    @spool_dia = 36.6
+    @spool_dia =  @box[:y] - 5.5 - @strip_w_smaller  # 36.6
     @strip_corner_dia = 20
-    @upper_strip_exit_offset = 22.5
-    @upper_strip_corner_dia = 28
+    @upper_strip_exit_offset = @spool_dia / 2.0 + @strip_w
+    @upper_strip_corner_dia = 29 - @strip_w_actual
     @exit_angle = -90
     @label_w = 50
     @splitter_x = @label_w+0
     @splitter_w = 3
-    @tape_exit_y = @box[:y] - 6
+    @tape_exit_y = @upper_strip_exit_offset
 
     @cutout_x = @splitter_x + @splitter_w + 5
     @cutout_w = 20
@@ -45,40 +46,45 @@ class SmdDispenser < Part
     corn
   end
 
-  # NOTE: extra messy code, some values are hardcoded that shouldn't
+  # NOTE: extra messy code, some things are hardcoded that shouldn't
   def tape_path
     l = @spool_dia/2.0 + @side_wall
-    k = @box[:y] - 31
     res = cube(x: l, y: @strip_w, z: @strip_h).moveh(x: l-0.1)
 
     co = corner(@strip_w, @strip_corner_dia)
     res += co.movea(:x)
 
     res.movei(co.anchor[:y])
-    res += cube(x: @strip_w, y: k, z: @strip_h).moveh(y: k-0.5).movei(co.anchor[:x])
+    vertical_wall = @upper_strip_exit_offset - @strip_corner_dia/2.0 - @strip_w/2.0
+
+    res += cube(x: @strip_w, y: vertical_wall+0.2, z: @strip_h).cx.movei(co.anchor[:x]).move(y: -0.1)
 
     cou = corner(@strip_w, @upper_strip_corner_dia)
     upper = cou
+    tape_exit = -1*(co.anchor[:x][:y] + cou.anchor[:x][:y]) + vertical_wall - 0.85
 
-    # cut away extra material
-    upper -= cube(xy: @strip_w*6).nc.rotate(z: -@exit_angle)
-    res += upper.rotate(z: -90).movei(cou.anchor[:y]).move(y: @upper_strip_exit_offset ) #.color("red") #.rotate_around({x: 0, y: 0, z: 0}, z:-70)
+    # upper bend
+    res += upper.rotate(z: -90).movei(cou.anchor[:y]).move(y: @upper_strip_exit_offset )
+
 
     thinner = hull(
       cube(x: 10, y: @strip_w, z: @strip_h).nc.moveh(y: -@strip_w_upper_guide),
-      cube(x: 10, y: @strip_w_upper_guide, z: @strip_h).nc.move(x: 5)
+      cube(x: 10, y: @strip_w_smaller, z: @strip_h).nc.move(x: 5)
     )
-    res += thinner.move(x: 15, y: @tape_exit_y)
+    res += thinner.move(x: 15, y: tape_exit)
 
-    res += cube(x: @label_w - @splitter_w-10, y: @strip_w_upper_guide, z: @strip_h).nc.move(x: 15, y: @tape_exit_y).color("green")
+    #res += cube(x: @label_w - @splitter_w-10, y: @strip_w_upper_guide, z: @strip_h).nc.move(x: 15, y: tape_exit).color("green")
     # this one goes to the end
-    res += cube(x: @box[:x], y: @strip_w_smaller, z: @strip_h).nc.move(x: 15, y: @tape_exit_y ).color("blue")
+    res += cube(x: @box[:x], y: @strip_w_smaller, z: @strip_h).nc.move(x: 15, y: tape_exit ).color("blue")
 #
 
-    res += cube(x: @splitter_w, y: @strip_w*2, z: @strip_h).nc.move(x: @splitter_x, y: @box[:y]-5 )
-    res += cube(x: @splitter_w, y: @strip_w*3, z: @strip_h).nc.rotate(z:-45).move(x: @splitter_x, y: @box[:y]-2.7 - @strip_w_smaller).color("red")
+    splitter = hull(
+      cube(x: @splitter_w*2, y: 1, z: @strip_h).nc.move(x: @splitter_w-2, y: @strip_w*2),
+      cube(x: @splitter_w, y: 0.1, z: @strip_h).nc.move(x: -@splitter_w)
+    )
+    res += splitter.move(x: @splitter_x, y: tape_exit + @strip_w_smaller)
 
-    res += cube(x: @cutout_w, y: @strip_w*2, z: @strip_h).nc.move(x: @cutout_x, y: @box[:y]-7+@strip_w_smaller )
+    res += cube(x: @cutout_w, y: @box[:y] - tape_exit, z: @strip_h).nc.move(x: @cutout_x, y: tape_exit )
 
 
 
@@ -102,7 +108,9 @@ class SmdDispenser < Part
     res = rcube(@box).nc
     res -= tape_path.moveh(xy: @strip_w).move(x: @side_wall, y: @outer_wall) #.color("red")
     res.move(z: @bottom[:z])
-    res += rcube(@bottom).nc.color("pink")
+
+    res += rcube(@bottom).nc
+    res = res.color("pink")
     res -= cube(x: @label_w+0.2, y: 0.5, z: 12).move(x: @label_w/2.0, y: @box[:y]-0.1).color("silver")
     magnets = magnet.move(x: 2)
     magnets += magnet.move(x: @box[:x] - @magnet_w - 2)
