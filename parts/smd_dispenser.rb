@@ -102,7 +102,7 @@ class SmdDispenser < Part
 
     res += rcube(@bottom).nc
     res = res.color("pink")
-    res -= cube(x: @label_w+0.2, y: 0.5, z: 12).move(x: @label_w/2.0, y: @box[:y]-0.1).color("silver")
+    res -= cube(x: @label_w+0.2, y: 0.5).move(x: @label_w/2.0, y: @box[:y]-0.1).color("silver")
     magnets = magnet.move(x: 2)
     magnets += magnet.move(x: @box[:x] - @magnet_w - 2)
     res -= magnets.move(y: @single_wall, z: @magnet_z)

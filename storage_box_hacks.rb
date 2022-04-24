@@ -21,13 +21,18 @@ class StorageBoxHacks < Project
     SmdDispenser.new({ strip_w: 1.55 })
   end
 
-  def mathtest
-    Mathtest.new(config)
+  def smd_dispenser_12_2
+    SmdDispenser.new({ strip_h: 12, strip_w: 2.05 })
   end
 
-  def pathtest
-    Pathtest.new(config)
+  def smd_dispenser_16_4
+    SmdDispenser.new({ strip_h: 16, strip_w: 4.0 })
   end
+
+  def smd_dispenser_16_6
+    SmdDispenser.new({ strip_h: 16, strip_w: 6.0 })
+  end
+
   # jenncad-append-project-magic
 
 end
