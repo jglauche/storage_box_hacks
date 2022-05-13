@@ -25,6 +25,10 @@ class StorageBoxHacks < Project
     SmdDispenser.new({ strip_h: 12, strip_w: 2.05 })
   end
 
+  def smd_dispenser_12_25
+    SmdDispenser.new({ strip_h: 12, strip_w: 2.5 })
+  end
+
   def smd_dispenser_16_4
     SmdDispenser.new({ strip_h: 16, strip_w: 4.0 })
   end
@@ -33,6 +37,14 @@ class StorageBoxHacks < Project
     SmdDispenser.new({ strip_h: 16, strip_w: 6.0 })
   end
 
+
+  def coin_battery_holder
+    CoinBatteryHolder.new(config)
+  end
+
+  def coin_battery
+    CoinBattery.new(config)
+  end
   # jenncad-append-project-magic
 
 end
