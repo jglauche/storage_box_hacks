@@ -45,6 +45,18 @@ class StorageBoxHacks < Project
   def coin_battery
     CoinBattery.new(config)
   end
+
+  def grid_segment
+    GridSegment.new(config)
+  end
+
+  def container
+    Container.new(config)
+  end
+
+  def container_base_calibration
+    ContainerBaseCalibration.new(config)
+  end
   # jenncad-append-project-magic
 
 end
