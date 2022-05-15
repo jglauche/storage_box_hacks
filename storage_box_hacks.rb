@@ -54,6 +54,20 @@ class StorageBoxHacks < Project
     Container.new(config)
   end
 
+  def container_1x0_5
+    Container.new({num_x: 0.5, num_y: 1})
+  end
+
+  def container_1_5x0_5
+    Container.new({num_x: 1.5, num_y: 0.5})
+  end
+
+  def container_1x1_5
+    Container.new({num_x: 1.5, num_y: 1})
+  end
+
+
+
   def container_base_calibration
     ContainerBaseCalibration.new(config)
   end

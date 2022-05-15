@@ -10,6 +10,8 @@ class Container < Part
       w: @w_inner,
       repeat_x: @num_x,
       repeat_y: @num_y,
+      lid_extra_w: 0.4,
+      lid_extra_h: 0.4,
     }
     @grid = GridSegment.new(@grid_opts)
 
@@ -22,7 +24,7 @@ class Container < Part
     @y = @size * @num_y - @shrink
 
 
-    @z = 44 + 1
+    @z = 45
     @d = 5
 
     @wall = 3
@@ -40,7 +42,7 @@ class Container < Part
     base = rcube(x: @x, y: @y, z: @z, d: @d).color("purple")
     res = base.fix
     res -= rcube(x: @x_inner, y: @y_inner, z: @z).move(z: @bottom_wall)
-    res.moveh(x: @x, y: @y).moveh(xy: @center_size-@size + @shrink)
+    res.moveh(x: @x, y: @y).moveh(xy: @center_size - @size + @shrink)
     res.color("red")
 
     grid_bits = @grid.part

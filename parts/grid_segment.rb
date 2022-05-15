@@ -11,7 +11,13 @@ class GridSegment < Part
     @lid_segment_beam_length = 43.2
     @lid_segment_inner = 47.0
     @lid_segment_outer = 49.2
-
+    @lid_segment_center = @lid_segment_inner + (@lid_segment_outer- @lid_segment_inner) / 2.0
+    # 45-46.5 height across the container, ~2.7 - 3.5
+    @lid_z = 46.5 - 2.7 + 1.2 # 1.2 is some margin
+    @lid_segment_extra_w = opts[:lid_extra_w] || 0.0
+    @lid_segment_extra_h = opts[:lid_extra_h] || 0.0
+    @lid_segment_w = 1.2 + @lid_segment_extra_w
+    @lid_segment_h = 3.1 + @lid_segment_extra_h
 
     @w_orig = 1.08
     @w = opts[:w] || @w_orig
@@ -31,35 +37,47 @@ class GridSegment < Part
   end
 
   def wall
-    res = rcube(xy: @segment_outer, d: @segment_corner_dia, z: @h+0.002)
+    res = rcube(xy: @segment_outer, d: @segment_corner_dia)
     res -= rcube(xy: @segment_inner, d: @segment_corner_dia)
-    res -= cube(x: @segment_outer - @segment_len*2, y: @xy)
-    res -= cube(y: @segment_outer - @segment_len*2, x: @xy)
+    res -= square(x: @segment_outer - @segment_len*2, y: @xy)
+    res -= square(y: @segment_outer - @segment_len*2, x: @xy)
 
-    res.color("red")
+    res
   end
 
-  def top_wall(r=0)
+  def top_wall
+    res = square(x: @lid_segment_beam_length, y: @lid_segment_w).moveh(y: @lid_segment_center)
+    res += square(x: @lid_segment_beam_length, y: @lid_segment_w).moveh(y: -@lid_segment_center)
+    res += square(y: @lid_segment_beam_length, x: @lid_segment_w).moveh(x: @lid_segment_center)
+    res += square(y: @lid_segment_beam_length, x: @lid_segment_w).moveh(x: -@lid_segment_center)
+    res
   end
 
   def base
-    cube(xy: @xy, z: @z).inner_anchors(@segment_pos).color("darkgray")
-  end
-
-  def grid_piece
-    res = base.fix#.ghost
-    res += wall.move(z: @z-0.001)
-    res.moveai(:top_face, base)
+    square(xy: @xy).inner_anchors(@segment_pos)#.color("darkgray")
   end
 
   def part
-    res = grid_piece
+    bottom_plate = base
+    bottom_cut = wall
+    top_cut = top_wall
+
     @repeat_x.ceil.times do |i|
       @repeat_y.ceil.times do |j|
-        res += grid_piece.move(x: i*@xy_g, y: j*@xy_g)
+        coords = {x: i*@xy_g, y: j*@xy_g}
+        bottom_plate += base.move(coords)
+        bottom_cut += wall.move(coords)
+        top_cut += top_wall.move(coords)
       end
     end
+
+    res = bottom_plate.extrude(z: @z).ghost.move(z: -@z-0.002)
+    res += bottom_plate.extrude(z: @z).ghost.move(z: @lid_z)
+
+    res += bottom_cut.extrude(z: @h).color("red")
+    res += top_cut.extrude(z: @lid_segment_h).move(z: @lid_z-@lid_segment_h).color("blue")
+
     # move to 0,0
-    res.moveh(xy: @xy, z: -0.001)
+    res.moveh(xy: @xy)
   end
 end
