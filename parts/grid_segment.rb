@@ -1,4 +1,5 @@
 class GridSegment < Part
+  attr_accessor :xy, :xy_g
   def initialize(opts={})
     @segment_size_outer = 48.2
     @segment_size_inner = 46.15
@@ -23,6 +24,7 @@ class GridSegment < Part
     @segment_len = @segment_dist_outer + @extra_len
 
     @xy = @segment_size_outer + @segment_dist_outer / 2.0
+    @xy_g = @xy + 2
     @z = 1
     @repeat_x = opts[:repeat_x] || 1
     @repeat_y = opts[:repeat_y] || 1
@@ -45,20 +47,19 @@ class GridSegment < Part
   end
 
   def grid_piece
-    res = base.fix
+    res = base.fix#.ghost
     res += wall.move(z: @z-0.001)
     res.moveai(:top_face, base)
   end
 
   def part
     res = grid_piece
-    @repeat_x.times do |i|
-      @repeat_y.times do |j|
-        res += grid_piece.move(x: i*@xy, y: j*@xy)
+    @repeat_x.ceil.times do |i|
+      @repeat_y.ceil.times do |j|
+        res += grid_piece.move(x: i*@xy_g, y: j*@xy_g)
       end
     end
-
     # move to 0,0
-    res.moveh(xy: @xy)
+    res.moveh(xy: @xy, z: -0.001)
   end
 end
