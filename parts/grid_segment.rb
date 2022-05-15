@@ -1,5 +1,6 @@
 class GridSegment < Part
-  attr_accessor :xy, :xy_g
+  attr_accessor :xy, :xy_g, :lid_segment_h
+
   def initialize(opts={})
     @segment_size_outer = 48.2
     @segment_size_inner = 46.15

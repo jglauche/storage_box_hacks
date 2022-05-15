@@ -38,8 +38,13 @@ class Container < Part
 
   end
 
+  def corner_cleanup
+    cube(xy: @d/2.0, z: @grid.lid_segment_h+0.1).move(z: @z-@grid.lid_segment_h)
+  end
+
   def part
     base = rcube(x: @x, y: @y, z: @z, d: @d).color("purple")
+
     res = base.fix
     res -= rcube(x: @x_inner, y: @y_inner, z: @z).move(z: @bottom_wall)
     res.moveh(x: @x, y: @y).moveh(xy: @center_size - @size + @shrink)
@@ -57,6 +62,15 @@ class Container < Part
     if diff_y > 0
       grid_bits += @grid.part.move(y:-@size/2.0)
     end
+    # cut away the tiny corners on parts that possibly have both intersections
+    refbase = cube(x: @x - (@x-@x_inner)/2.0, y: @y - (@y- @y_inner) / 2.0, z: @z).nc
+    if diff_x > 0 && diff_y > 0
+      grid_bits += corner_cleanup
+      grid_bits += corner_cleanup.movea(:top_left, refbase)
+      grid_bits += corner_cleanup.movea(:bottom_right, refbase)
+      grid_bits += corner_cleanup.movea(:top_right, refbase)
+    end
+
     res -= grid_bits
     #res = grid_bits
 

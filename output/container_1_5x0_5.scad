@@ -402,6 +402,10 @@ module Container_num_x_1_5_num_y_0_5(){
 
         }
 
+      translate([-1.25, -1.25, 41.5])color("Aquamarine")cube([2.5, 2.5, 3.6]);
+      translate([-1.25, 23.1, 41.5])color("Aquamarine")cube([2.5, 2.5, 3.6]);
+      translate([76.8, -1.25, 41.5])color("Aquamarine")cube([2.5, 2.5, 3.6]);
+      translate([76.8, 23.1, 41.5])color("Aquamarine")cube([2.5, 2.5, 3.6]);
     }
 
   }
