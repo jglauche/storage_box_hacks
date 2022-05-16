@@ -5,7 +5,7 @@ module Path(){
           translate([-14.175, 0, -0.002])cylinder(d=2.95,h=13.008,$fn=64);
         }
 
-      translate([-14.175, 0, -0.002])linear_extrude(height=13)translate([0, 5.225, 0])rotate([0, 0, 180])intersection(){
+      translate([-14.175, 0, -0.002])linear_extrude(height=13.004)translate([0, 5.225, 0])rotate([0, 0, 180])intersection(){
                 difference(){
                   circle(d=13.4,$fn=64);
                   circle(d=7.5,$fn=64);
@@ -19,7 +19,7 @@ module Path(){
           translate([-19.4, 30.125000000000007, -0.002])cylinder(d=2.95,h=13.008,$fn=64);
         }
 
-      translate([-19.4, 30.125000000000007, -0.002])linear_extrude(height=13)translate([5.225, 0, 0])rotate([0, 0, 90])intersection(){
+      translate([-19.4, 30.125000000000007, -0.002])linear_extrude(height=13.004)translate([5.225, 0, 0])rotate([0, 0, 90])intersection(){
                 difference(){
                   circle(d=13.4,$fn=64);
                   circle(d=7.5,$fn=64);
@@ -32,6 +32,37 @@ module Path(){
           translate([-14.175, 35.35000000000001, -0.002])cylinder(d=2.95,h=13.008,$fn=64);
           translate([-6.39877952554492e-16, 35.35000000000001, -0.002])cylinder(d=2.95,h=13.008,$fn=64);
         }
+
+    }
+}
+module GridSegment_extra_w_1_0_extra_len_2_h_1_5_w_2_08_repeat_x_2_repeat_y_1_lid_extra_w_1_0_lid_extra_h_0_4_no_bottom_true(){
+  translate([25.85, 25.85, 0])union(){
+      translate([0, 0, 45])%linear_extrude(height=1)union(){
+            translate([-25.85, -25.85, 0])square([51.7, 51.7]);
+            translate([-25.85, -25.85, 0])square([51.7, 51.7]);
+            translate([27.85, -25.85, 0])square([51.7, 51.7]);
+          }
+
+      translate([0, 0, 41.5])color("blue")linear_extrude(height=3.5)union(){
+              translate([-21.6, 22.95, 0])square([43.2, 2.2]);
+              translate([-21.6, -25.15, 0])square([43.2, 2.2]);
+              translate([22.95, -21.6, 0])square([2.2, 43.2]);
+              translate([-25.15, -21.6, 0])square([2.2, 43.2]);
+              union(){
+                translate([-21.6, 22.95, 0])square([43.2, 2.2]);
+                translate([-21.6, -25.15, 0])square([43.2, 2.2]);
+                translate([22.95, -21.6, 0])square([2.2, 43.2]);
+                translate([-25.15, -21.6, 0])square([2.2, 43.2]);
+              }
+
+              translate([53.7, 0, 0])union(){
+                  translate([-21.6, 22.95, 0])square([43.2, 2.2]);
+                  translate([-21.6, -25.15, 0])square([43.2, 2.2]);
+                  translate([22.95, -21.6, 0])square([2.2, 43.2]);
+                  translate([-25.15, -21.6, 0])square([2.2, 43.2]);
+                }
+
+            }
 
     }
 }
@@ -62,12 +93,12 @@ module SmdDispenser_strip_h_12_strip_w_2_05(){
                   }
 
                 translate([0, -1.225, -0.004])color("blue")cube([101, 2.45, 12.016]);
-                translate([37, 0, -0.004])hull(){
-                    translate([1, 7.374999999999999, -0.004])cube([6, 0.001, 12.016]);
-                    translate([-3, 0, -0.004])cube([3, 0.001, 12.016]);
-                  }
+                translate([29.75, 0, -0.004])linear_extrude(height=12.008)hull(){
+                      translate([7, 7.374999999999999, 0])square([18, 0.001]);
+                      translate([-9, 0, 0])square([9, 0.001]);
+                    }
 
-                translate([45, 0, -0.1])cube([20, 8.85, 13.208]);
+                translate([43.75, 0, -0.1])cube([20, 8.85, 13.208]);
               }
 
           }
@@ -81,12 +112,14 @@ module SmdDispenser_strip_h_12_strip_w_2_05(){
 
       }
 
-    translate([-0.1, 42.75, -0.1])color("silver")cube([50.2, 0.5, 14.8]);
-    translate([0, 0, 1])color("SteelBlue")union(){
+    translate([-0.1, 42.75, -0.1])color("silver")cube([45.2, 0.5, 14.8]);
+    translate([0, 0, 1])color("LightCoral")union(){
           translate([2, 0, -0.1])cube([5.5, 2.05, 14.8]);
           translate([93.5, 0, -0.1])cube([5.5, 2.05, 15]);
         }
 
+    translate([0, 0, -5])mirror([0, 1, 0])rotate([90, 0, 0])translate([-2.4000000000000057, 0, -1.5])GridSegment_extra_w_1_0_extra_len_2_h_1_5_w_2_08_repeat_x_2_repeat_y_1_lid_extra_w_1_0_lid_extra_h_0_4_no_bottom_true();
+    translate([47.5, 40.1, -0.002])color("purple")cube([6, 6, 13.608]);
   }
 }
 $fn=64;

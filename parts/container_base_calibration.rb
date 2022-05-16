@@ -2,14 +2,18 @@ class ContainerBaseCalibration < Part
   def initialize(opts={})
     @num_x = opts[:num_x] || 3
     @num_y = opts[:num_y] || 1
+
     @grid_opts = {
-      extra_w: 1.0,
-      extra_len: 2.0,
-      h: @h_inner,
-      w: @w_inner,
+      extra_w: $conf[:grid_extra_w],
+      extra_len: $conf[:grid_extra_len],
+      h: $conf[:h_inner],
+      w: $conf[:w_inner],
       repeat_x: @num_x,
       repeat_y: @num_y,
+      lid_extra_w: $conf[:lid_extra_w],
+      lid_extra_h: $conf[:lid_extra_h],
     }
+
     @grid = GridSegment.new(@grid_opts)
 
     @wall = 3
@@ -25,9 +29,7 @@ class ContainerBaseCalibration < Part
     @y_inner = 50
     @bottom_wall = 2.0
 
-    @h_inner = 1.5
-    @z = @h_inner
-    @w_inner = 2.08
+    @z = $conf[:h_inner]
 
     # don't print the middle for this calibration piece
     @middle_cut_inverted = 28

@@ -19,19 +19,19 @@ module Container_num_x_1_5_num_y_0_5(){
 
     union(){
       translate([25.85, 25.85, 0])union(){
-          translate([0, 0, -1.002])%linear_extrude(height=1)union(){
+          translate([0, 0, -1])%linear_extrude(height=1)union(){
                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
                 translate([27.85, -25.85, 0])square([51.7, 51.7]);
               }
 
-          translate([0, 0, 45.002])%linear_extrude(height=1)union(){
+          translate([0, 0, 45.002])%linear_extrude(height=1.004)union(){
                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
                 translate([27.85, -25.85, 0])square([51.7, 51.7]);
               }
 
-          color("red")linear_extrude(height=1)union(){
+          color("red")linear_extrude(height=1.5)union(){
                 difference(){
                   translate([-24.35, -24.35, 0])union()translate([2.5, 2.5, 0])hull(){
                           circle(d=5,$fn=64);
@@ -115,19 +115,19 @@ module Container_num_x_1_5_num_y_0_5(){
         }
 
       translate([-1, -1, 0])union(){
-          translate([0, 0, -1.002])%linear_extrude(height=1)union(){
+          translate([0, 0, -1])%linear_extrude(height=1)union(){
                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
                 translate([27.85, -25.85, 0])square([51.7, 51.7]);
               }
 
-          translate([0, 0, 45.002])%linear_extrude(height=1)union(){
+          translate([0, 0, 45.002])%linear_extrude(height=1.004)union(){
                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
                 translate([27.85, -25.85, 0])square([51.7, 51.7]);
               }
 
-          color("red")linear_extrude(height=1)union(){
+          color("red")linear_extrude(height=1.5)union(){
                 difference(){
                   translate([-24.35, -24.35, 0])union()translate([2.5, 2.5, 0])hull(){
                           circle(d=5,$fn=64);
@@ -211,19 +211,19 @@ module Container_num_x_1_5_num_y_0_5(){
         }
 
       translate([-1, 25.85, 0])union(){
-          translate([0, 0, -1.002])%linear_extrude(height=1)union(){
+          translate([0, 0, -1])%linear_extrude(height=1)union(){
                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
                 translate([27.85, -25.85, 0])square([51.7, 51.7]);
               }
 
-          translate([0, 0, 45.002])%linear_extrude(height=1)union(){
+          translate([0, 0, 45.002])%linear_extrude(height=1.004)union(){
                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
                 translate([27.85, -25.85, 0])square([51.7, 51.7]);
               }
 
-          color("red")linear_extrude(height=1)union(){
+          color("red")linear_extrude(height=1.5)union(){
                 difference(){
                   translate([-24.35, -24.35, 0])union()translate([2.5, 2.5, 0])hull(){
                           circle(d=5,$fn=64);
@@ -307,19 +307,19 @@ module Container_num_x_1_5_num_y_0_5(){
         }
 
       translate([25.85, -1, 0])union(){
-          translate([0, 0, -1.002])%linear_extrude(height=1)union(){
+          translate([0, 0, -1])%linear_extrude(height=1)union(){
                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
                 translate([27.85, -25.85, 0])square([51.7, 51.7]);
               }
 
-          translate([0, 0, 45.002])%linear_extrude(height=1)union(){
+          translate([0, 0, 45.002])%linear_extrude(height=1.004)union(){
                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
                 translate([27.85, -25.85, 0])square([51.7, 51.7]);
               }
 
-          color("red")linear_extrude(height=1)union(){
+          color("red")linear_extrude(height=1.5)union(){
                 difference(){
                   translate([-24.35, -24.35, 0])union()translate([2.5, 2.5, 0])hull(){
                           circle(d=5,$fn=64);
@@ -402,10 +402,10 @@ module Container_num_x_1_5_num_y_0_5(){
 
         }
 
-      translate([-1.25, -1.25, 41.5])color("Aquamarine")cube([2.5, 2.5, 3.6]);
-      translate([-1.25, 23.1, 41.5])color("Aquamarine")cube([2.5, 2.5, 3.6]);
-      translate([76.8, -1.25, 41.5])color("Aquamarine")cube([2.5, 2.5, 3.6]);
-      translate([76.8, 23.1, 41.5])color("Aquamarine")cube([2.5, 2.5, 3.6]);
+      translate([-1.25, -1.25, 41.5])color("DarkOliveGreen")cube([2.5, 2.5, 3.6]);
+      translate([-1.25, 23.1, 41.5])color("DarkOliveGreen")cube([2.5, 2.5, 3.6]);
+      translate([76.8, -1.25, 41.5])color("DarkOliveGreen")cube([2.5, 2.5, 3.6]);
+      translate([76.8, 23.1, 41.5])color("DarkOliveGreen")cube([2.5, 2.5, 3.6]);
     }
 
   }

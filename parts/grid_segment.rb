@@ -35,6 +35,8 @@ class GridSegment < Part
     @z = 1
     @repeat_x = opts[:repeat_x] || 1
     @repeat_y = opts[:repeat_y] || 1
+    @no_top = opts[:no_top] || false
+    @no_bottom = opts[:no_bottom] || false
   end
 
   def wall
@@ -72,11 +74,11 @@ class GridSegment < Part
       end
     end
 
-    res = bottom_plate.extrude(z: @z).ghost.move(z: -@z-0.002)
-    res += bottom_plate.extrude(z: @z).ghost.move(z: @lid_z)
+    res = bottom_plate.extrude(z: @z).ghost.move(z: -@z) unless @no_bottom
+    res += bottom_plate.extrude(z: @z).ghost.move(z: @lid_z) unless @no_top
 
-    res += bottom_cut.extrude(z: @h).color("red")
-    res += top_cut.extrude(z: @lid_segment_h).move(z: @lid_z-@lid_segment_h).color("blue")
+    res += bottom_cut.extrude(z: @h).color("red") unless @no_bottom
+    res += top_cut.extrude(z: @lid_segment_h).move(z: @lid_z-@lid_segment_h).color("blue") unless @no_top
 
     # move to 0,0
     res.moveh(xy: @xy)

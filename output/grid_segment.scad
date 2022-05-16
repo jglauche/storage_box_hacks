@@ -1,6 +1,6 @@
 module GridSegment(){
   translate([25.85, 25.85, 0])union(){
-      translate([0, 0, -1.002])%linear_extrude(height=1)union(){
+      translate([0, 0, -1])%linear_extrude(height=1)union(){
             translate([-25.85, -25.85, 0])square([51.7, 51.7]);
             translate([-25.85, -25.85, 0])square([51.7, 51.7]);
           }

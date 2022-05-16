@@ -31,4 +31,4 @@ module SmdStripTop(){
       }
 }
 $fn=64;
-color("MediumVioletRed")SmdStripTop();
+color("OrangeRed")SmdStripTop();

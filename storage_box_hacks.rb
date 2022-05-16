@@ -3,6 +3,18 @@ require "jenncad"
 include JennCad
 
 class StorageBoxHacks < Project
+
+  def initialize
+    $conf = {
+      grid_extra_w: 1.0,
+      grid_extra_len: 2,
+      lid_extra_w: 0.4,
+      lid_extra_h: 0.4,
+      h_inner: 1.5,
+      w_inner: 2.08,
+    }
+  end
+
   def config
     {}
   end
