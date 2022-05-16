@@ -82,7 +82,7 @@ module SmdDispenser_strip_w_0_6(){
       }
 
     translate([-0.1, 42.75, -0.1])color("silver")cube([50.2, 0.5, 12.8]);
-    translate([0, 0, 1])color("DarkOrchid")union(){
+    translate([0, 0, 1])color("OrangeRed")union(){
           translate([2, 0, -0.1])cube([5.5, 2.05, 12.8]);
           translate([93.5, 0, -0.1])cube([5.5, 2.05, 13]);
         }
