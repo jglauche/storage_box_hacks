@@ -7,16 +7,17 @@ class StorageBoxHacks < Project
     {}
   end
 
-  # for bigger part strips that can fold
+  # this one was my first attempt to make a dispenser for a 100-pack of SMD buttons. May be removed in the future
   def smd_strip_top
     SmdStripTop.new(config)
   end
 
-  # for resistors, etc
+  # These dispensers for resistors, etc.  (10mm tape)
   def smd_dispenser
     SmdDispenser.new({ strip_w: 0.6  })
   end
 
+  # thicker smd parts, smd capacitors, diodes (10mm tape)
   def smd_dispenser_10mm_bigger_parts
     SmdDispenser.new({ strip_w: 1.55 })
   end

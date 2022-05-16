@@ -1,5 +1,6 @@
 class SmdStripTop < Part
   def initialize(opts={})
+    # NOTE: this waas my first prototype for a larger spool of smd buttons
     @opts = opts
     @yellow_h = 44
     @yellow_h_inner = 43
