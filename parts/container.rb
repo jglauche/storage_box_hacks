@@ -26,13 +26,12 @@ class Container < Part
 
     @z = 45
     @d = 5
+    @inner_d = 2
 
     @wall = 3
     @x_inner = @x - @wall
     @y_inner = @y - @wall
-    @bottom_wall = 2.0
-
-
+    @bottom_wall = 2.6
   end
 
   def corner_cleanup
@@ -43,7 +42,7 @@ class Container < Part
     base = rcube(x: @x, y: @y, z: @z, d: @d).color("purple")
 
     res = base.fix
-    res -= rcube(x: @x_inner, y: @y_inner, z: @z).move(z: @bottom_wall)
+    res -= rcube(x: @x_inner, y: @y_inner, z: @z, d: @inner_d).move(z: @bottom_wall)
     res.moveh(x: @x, y: @y).moveh(xy: @center_size - @size + @shrink)
     res.color("red")
 

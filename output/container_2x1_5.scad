@@ -8,11 +8,11 @@ module Container_num_x_2_num_y_1_5(){
                       translate([101.4, 74.55, 0])circle(d=5,$fn=64);
                     }
 
-          translate([-51.7, -38.275, 1.996])union()linear_extrude(height=45.008)translate([2.5, 2.5, 0])hull(){
-                    circle(d=5,$fn=64);
-                    translate([98.4, 0, 0])circle(d=5,$fn=64);
-                    translate([0, 71.55, 0])circle(d=5,$fn=64);
-                    translate([98.4, 71.55, 0])circle(d=5,$fn=64);
+          translate([-51.7, -38.275, 2.596])union()linear_extrude(height=45.008)translate([1, 1, 0])hull(){
+                    circle(d=2,$fn=64);
+                    translate([101.4, 0, 0])circle(d=2,$fn=64);
+                    translate([0, 74.55, 0])circle(d=2,$fn=64);
+                    translate([101.4, 74.55, 0])circle(d=2,$fn=64);
                   }
 
         }
