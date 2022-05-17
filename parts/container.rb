@@ -31,7 +31,7 @@ class Container < Part
     @wall = 3
     @x_inner = @x - @wall
     @y_inner = @y - @wall
-    @bottom_wall = 2.6
+    @bottom_wall = 2.3
   end
 
   def corner_cleanup

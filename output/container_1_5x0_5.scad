@@ -8,7 +8,7 @@ module Container_num_x_1_5_num_y_0_5(){
                       translate([74.55, 20.85, 0])circle(d=5,$fn=64);
                     }
 
-          translate([-38.275, -11.425, 2.596])union()linear_extrude(height=45.008)translate([1, 1, 0])hull(){
+          translate([-38.275, -11.425, 2.296])union()linear_extrude(height=45.008)translate([1, 1, 0])hull(){
                     circle(d=2,$fn=64);
                     translate([74.55, 0, 0])circle(d=2,$fn=64);
                     translate([0, 20.85, 0])circle(d=2,$fn=64);
