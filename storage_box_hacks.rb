@@ -83,8 +83,20 @@ class StorageBoxHacks < Project
     Container.new({num_x: 1.5, num_y: 1.5})
   end
 
+  def container_2x0_5
+    Container.new({num_x: 2, num_y: 0.5})
+  end
+
   def container_2x1_5
     Container.new({num_x: 2, num_y: 1.5})
+  end
+
+  def container_2_5x0_5
+    Container.new({num_x: 2.5, num_y: 0.5})
+  end
+
+  def container_3x0_5
+    Container.new({num_x: 3.0, num_y: 0.5})
   end
 
 

@@ -1,42 +1,40 @@
-module Container_num_x_1_5_num_y_1_5(){
+module Container_num_x_2_5_num_y_0_5(){
   difference(){
-    translate([39.27500000000001, 39.27500000000001, 0])color("red")difference(){
-          translate([-39.775000000000006, -39.775000000000006, 0])color("purple")union()linear_extrude(height=45)translate([2.5, 2.5, 0])hull(){
+    translate([66.125, 12.425, 0])color("red")difference(){
+          translate([-66.625, -12.925, 0])color("purple")union()linear_extrude(height=45)translate([2.5, 2.5, 0])hull(){
                       circle(d=5,$fn=64);
-                      translate([74.55, 0, 0])circle(d=5,$fn=64);
-                      translate([0, 74.55, 0])circle(d=5,$fn=64);
-                      translate([74.55, 74.55, 0])circle(d=5,$fn=64);
+                      translate([128.25, 0, 0])circle(d=5,$fn=64);
+                      translate([0, 20.85, 0])circle(d=5,$fn=64);
+                      translate([128.25, 20.85, 0])circle(d=5,$fn=64);
                     }
 
-          translate([-38.275, -38.275, 2.296])union()linear_extrude(height=45.008)translate([1, 1, 0])hull(){
+          translate([-65.125, -11.425, 2.296])union()linear_extrude(height=45.008)translate([1, 1, 0])hull(){
                     circle(d=2,$fn=64);
-                    translate([74.55, 0, 0])circle(d=2,$fn=64);
-                    translate([0, 74.55, 0])circle(d=2,$fn=64);
-                    translate([74.55, 74.55, 0])circle(d=2,$fn=64);
+                    translate([128.25, 0, 0])circle(d=2,$fn=64);
+                    translate([0, 20.85, 0])circle(d=2,$fn=64);
+                    translate([128.25, 20.85, 0])circle(d=2,$fn=64);
                   }
 
         }
 
     union(){
-      translate([78.05000000000001, 0, 0])union(){
-          translate([-78.05, 78.05000000000001, 0])union(){
-              translate([78.05000000000001, 1.0e-14, 0])union(){
-                  translate([-78.05000000000001, -78.05000000000001, 0])union(){
+      translate([131.75, 0, 0])union(){
+          translate([-131.75, 24.35, 0])union(){
+              translate([131.75, 0, 0])union(){
+                  translate([-131.75, -24.35, 0])union(){
                       translate([25.85, 25.85, 0])union(){
                           translate([0, 0, -1])%linear_extrude(height=1)union(){
                                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
                                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
-                                translate([-25.85, 27.85, 0])square([51.7, 51.7]);
                                 translate([27.85, -25.85, 0])square([51.7, 51.7]);
-                                translate([27.85, 27.85, 0])square([51.7, 51.7]);
+                                translate([81.55, -25.85, 0])square([51.7, 51.7]);
                               }
 
                           translate([0, 0, 45.002])%linear_extrude(height=1.004)union(){
                                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
                                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
-                                translate([-25.85, 27.85, 0])square([51.7, 51.7]);
                                 translate([27.85, -25.85, 0])square([51.7, 51.7]);
-                                translate([27.85, 27.85, 0])square([51.7, 51.7]);
+                                translate([81.55, -25.85, 0])square([51.7, 51.7]);
                               }
 
                           color("red")linear_extrude(height=1.5)union(){
@@ -78,25 +76,6 @@ module Container_num_x_1_5_num_y_1_5(){
                                   translate([-25.85, -15.350000000000001, 0])square([51.7, 30.700000000000003]);
                                 }
 
-                                translate([0, 53.7, 0])difference(){
-                                    translate([-24.35, -24.35, 0])union()translate([2.5, 2.5, 0])hull(){
-                                            circle(d=5,$fn=64);
-                                            translate([43.7, 0, 0])circle(d=5,$fn=64);
-                                            translate([0, 43.7, 0])circle(d=5,$fn=64);
-                                            translate([43.7, 43.7, 0])circle(d=5,$fn=64);
-                                          }
-
-                                    translate([-22.825, -22.825, 0])union()translate([2.5, 2.5, 0])hull(){
-                                            circle(d=5,$fn=64);
-                                            translate([40.65, 0, 0])circle(d=5,$fn=64);
-                                            translate([0, 40.65, 0])circle(d=5,$fn=64);
-                                            translate([40.65, 40.65, 0])circle(d=5,$fn=64);
-                                          }
-
-                                    translate([-15.350000000000001, -25.85, 0])square([30.700000000000003, 51.7]);
-                                    translate([-25.85, -15.350000000000001, 0])square([51.7, 30.700000000000003]);
-                                  }
-
                                 translate([53.7, 0, 0])difference(){
                                     translate([-24.35, -24.35, 0])union()translate([2.5, 2.5, 0])hull(){
                                             circle(d=5,$fn=64);
@@ -116,7 +95,7 @@ module Container_num_x_1_5_num_y_1_5(){
                                     translate([-25.85, -15.350000000000001, 0])square([51.7, 30.700000000000003]);
                                   }
 
-                                translate([53.7, 53.7, 0])difference(){
+                                translate([107.4, 0, 0])difference(){
                                     translate([-24.35, -24.35, 0])union()translate([2.5, 2.5, 0])hull(){
                                             circle(d=5,$fn=64);
                                             translate([43.7, 0, 0])circle(d=5,$fn=64);
@@ -149,13 +128,6 @@ module Container_num_x_1_5_num_y_1_5(){
                                     translate([-24.85, -21.6, 0])square([1.6, 43.2]);
                                   }
 
-                                  translate([0, 53.7, 0])union(){
-                                      translate([-21.6, 23.25, 0])square([43.2, 1.6]);
-                                      translate([-21.6, -24.85, 0])square([43.2, 1.6]);
-                                      translate([23.25, -21.6, 0])square([1.6, 43.2]);
-                                      translate([-24.85, -21.6, 0])square([1.6, 43.2]);
-                                    }
-
                                   translate([53.7, 0, 0])union(){
                                       translate([-21.6, 23.25, 0])square([43.2, 1.6]);
                                       translate([-21.6, -24.85, 0])square([43.2, 1.6]);
@@ -163,7 +135,7 @@ module Container_num_x_1_5_num_y_1_5(){
                                       translate([-24.85, -21.6, 0])square([1.6, 43.2]);
                                     }
 
-                                  translate([53.7, 53.7, 0])union(){
+                                  translate([107.4, 0, 0])union(){
                                       translate([-21.6, 23.25, 0])square([43.2, 1.6]);
                                       translate([-21.6, -24.85, 0])square([43.2, 1.6]);
                                       translate([23.25, -21.6, 0])square([1.6, 43.2]);
@@ -178,17 +150,15 @@ module Container_num_x_1_5_num_y_1_5(){
                           translate([0, 0, -1])%linear_extrude(height=1)union(){
                                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
                                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
-                                translate([-25.85, 27.85, 0])square([51.7, 51.7]);
                                 translate([27.85, -25.85, 0])square([51.7, 51.7]);
-                                translate([27.85, 27.85, 0])square([51.7, 51.7]);
+                                translate([81.55, -25.85, 0])square([51.7, 51.7]);
                               }
 
                           translate([0, 0, 45.002])%linear_extrude(height=1.004)union(){
                                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
                                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
-                                translate([-25.85, 27.85, 0])square([51.7, 51.7]);
                                 translate([27.85, -25.85, 0])square([51.7, 51.7]);
-                                translate([27.85, 27.85, 0])square([51.7, 51.7]);
+                                translate([81.55, -25.85, 0])square([51.7, 51.7]);
                               }
 
                           color("red")linear_extrude(height=1.5)union(){
@@ -230,25 +200,6 @@ module Container_num_x_1_5_num_y_1_5(){
                                   translate([-25.85, -15.350000000000001, 0])square([51.7, 30.700000000000003]);
                                 }
 
-                                translate([0, 53.7, 0])difference(){
-                                    translate([-24.35, -24.35, 0])union()translate([2.5, 2.5, 0])hull(){
-                                            circle(d=5,$fn=64);
-                                            translate([43.7, 0, 0])circle(d=5,$fn=64);
-                                            translate([0, 43.7, 0])circle(d=5,$fn=64);
-                                            translate([43.7, 43.7, 0])circle(d=5,$fn=64);
-                                          }
-
-                                    translate([-22.825, -22.825, 0])union()translate([2.5, 2.5, 0])hull(){
-                                            circle(d=5,$fn=64);
-                                            translate([40.65, 0, 0])circle(d=5,$fn=64);
-                                            translate([0, 40.65, 0])circle(d=5,$fn=64);
-                                            translate([40.65, 40.65, 0])circle(d=5,$fn=64);
-                                          }
-
-                                    translate([-15.350000000000001, -25.85, 0])square([30.700000000000003, 51.7]);
-                                    translate([-25.85, -15.350000000000001, 0])square([51.7, 30.700000000000003]);
-                                  }
-
                                 translate([53.7, 0, 0])difference(){
                                     translate([-24.35, -24.35, 0])union()translate([2.5, 2.5, 0])hull(){
                                             circle(d=5,$fn=64);
@@ -268,7 +219,7 @@ module Container_num_x_1_5_num_y_1_5(){
                                     translate([-25.85, -15.350000000000001, 0])square([51.7, 30.700000000000003]);
                                   }
 
-                                translate([53.7, 53.7, 0])difference(){
+                                translate([107.4, 0, 0])difference(){
                                     translate([-24.35, -24.35, 0])union()translate([2.5, 2.5, 0])hull(){
                                             circle(d=5,$fn=64);
                                             translate([43.7, 0, 0])circle(d=5,$fn=64);
@@ -301,13 +252,6 @@ module Container_num_x_1_5_num_y_1_5(){
                                     translate([-24.85, -21.6, 0])square([1.6, 43.2]);
                                   }
 
-                                  translate([0, 53.7, 0])union(){
-                                      translate([-21.6, 23.25, 0])square([43.2, 1.6]);
-                                      translate([-21.6, -24.85, 0])square([43.2, 1.6]);
-                                      translate([23.25, -21.6, 0])square([1.6, 43.2]);
-                                      translate([-24.85, -21.6, 0])square([1.6, 43.2]);
-                                    }
-
                                   translate([53.7, 0, 0])union(){
                                       translate([-21.6, 23.25, 0])square([43.2, 1.6]);
                                       translate([-21.6, -24.85, 0])square([43.2, 1.6]);
@@ -315,7 +259,7 @@ module Container_num_x_1_5_num_y_1_5(){
                                       translate([-24.85, -21.6, 0])square([1.6, 43.2]);
                                     }
 
-                                  translate([53.7, 53.7, 0])union(){
+                                  translate([107.4, 0, 0])union(){
                                       translate([-21.6, 23.25, 0])square([43.2, 1.6]);
                                       translate([-21.6, -24.85, 0])square([43.2, 1.6]);
                                       translate([23.25, -21.6, 0])square([1.6, 43.2]);
@@ -330,17 +274,15 @@ module Container_num_x_1_5_num_y_1_5(){
                           translate([0, 0, -1])%linear_extrude(height=1)union(){
                                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
                                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
-                                translate([-25.85, 27.85, 0])square([51.7, 51.7]);
                                 translate([27.85, -25.85, 0])square([51.7, 51.7]);
-                                translate([27.85, 27.85, 0])square([51.7, 51.7]);
+                                translate([81.55, -25.85, 0])square([51.7, 51.7]);
                               }
 
                           translate([0, 0, 45.002])%linear_extrude(height=1.004)union(){
                                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
                                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
-                                translate([-25.85, 27.85, 0])square([51.7, 51.7]);
                                 translate([27.85, -25.85, 0])square([51.7, 51.7]);
-                                translate([27.85, 27.85, 0])square([51.7, 51.7]);
+                                translate([81.55, -25.85, 0])square([51.7, 51.7]);
                               }
 
                           color("red")linear_extrude(height=1.5)union(){
@@ -382,25 +324,6 @@ module Container_num_x_1_5_num_y_1_5(){
                                   translate([-25.85, -15.350000000000001, 0])square([51.7, 30.700000000000003]);
                                 }
 
-                                translate([0, 53.7, 0])difference(){
-                                    translate([-24.35, -24.35, 0])union()translate([2.5, 2.5, 0])hull(){
-                                            circle(d=5,$fn=64);
-                                            translate([43.7, 0, 0])circle(d=5,$fn=64);
-                                            translate([0, 43.7, 0])circle(d=5,$fn=64);
-                                            translate([43.7, 43.7, 0])circle(d=5,$fn=64);
-                                          }
-
-                                    translate([-22.825, -22.825, 0])union()translate([2.5, 2.5, 0])hull(){
-                                            circle(d=5,$fn=64);
-                                            translate([40.65, 0, 0])circle(d=5,$fn=64);
-                                            translate([0, 40.65, 0])circle(d=5,$fn=64);
-                                            translate([40.65, 40.65, 0])circle(d=5,$fn=64);
-                                          }
-
-                                    translate([-15.350000000000001, -25.85, 0])square([30.700000000000003, 51.7]);
-                                    translate([-25.85, -15.350000000000001, 0])square([51.7, 30.700000000000003]);
-                                  }
-
                                 translate([53.7, 0, 0])difference(){
                                     translate([-24.35, -24.35, 0])union()translate([2.5, 2.5, 0])hull(){
                                             circle(d=5,$fn=64);
@@ -420,7 +343,7 @@ module Container_num_x_1_5_num_y_1_5(){
                                     translate([-25.85, -15.350000000000001, 0])square([51.7, 30.700000000000003]);
                                   }
 
-                                translate([53.7, 53.7, 0])difference(){
+                                translate([107.4, 0, 0])difference(){
                                     translate([-24.35, -24.35, 0])union()translate([2.5, 2.5, 0])hull(){
                                             circle(d=5,$fn=64);
                                             translate([43.7, 0, 0])circle(d=5,$fn=64);
@@ -453,13 +376,6 @@ module Container_num_x_1_5_num_y_1_5(){
                                     translate([-24.85, -21.6, 0])square([1.6, 43.2]);
                                   }
 
-                                  translate([0, 53.7, 0])union(){
-                                      translate([-21.6, 23.25, 0])square([43.2, 1.6]);
-                                      translate([-21.6, -24.85, 0])square([43.2, 1.6]);
-                                      translate([23.25, -21.6, 0])square([1.6, 43.2]);
-                                      translate([-24.85, -21.6, 0])square([1.6, 43.2]);
-                                    }
-
                                   translate([53.7, 0, 0])union(){
                                       translate([-21.6, 23.25, 0])square([43.2, 1.6]);
                                       translate([-21.6, -24.85, 0])square([43.2, 1.6]);
@@ -467,7 +383,7 @@ module Container_num_x_1_5_num_y_1_5(){
                                       translate([-24.85, -21.6, 0])square([1.6, 43.2]);
                                     }
 
-                                  translate([53.7, 53.7, 0])union(){
+                                  translate([107.4, 0, 0])union(){
                                       translate([-21.6, 23.25, 0])square([43.2, 1.6]);
                                       translate([-21.6, -24.85, 0])square([43.2, 1.6]);
                                       translate([23.25, -21.6, 0])square([1.6, 43.2]);
@@ -482,17 +398,15 @@ module Container_num_x_1_5_num_y_1_5(){
                           translate([0, 0, -1])%linear_extrude(height=1)union(){
                                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
                                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
-                                translate([-25.85, 27.85, 0])square([51.7, 51.7]);
                                 translate([27.85, -25.85, 0])square([51.7, 51.7]);
-                                translate([27.85, 27.85, 0])square([51.7, 51.7]);
+                                translate([81.55, -25.85, 0])square([51.7, 51.7]);
                               }
 
                           translate([0, 0, 45.002])%linear_extrude(height=1.004)union(){
                                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
                                 translate([-25.85, -25.85, 0])square([51.7, 51.7]);
-                                translate([-25.85, 27.85, 0])square([51.7, 51.7]);
                                 translate([27.85, -25.85, 0])square([51.7, 51.7]);
-                                translate([27.85, 27.85, 0])square([51.7, 51.7]);
+                                translate([81.55, -25.85, 0])square([51.7, 51.7]);
                               }
 
                           color("red")linear_extrude(height=1.5)union(){
@@ -534,25 +448,6 @@ module Container_num_x_1_5_num_y_1_5(){
                                   translate([-25.85, -15.350000000000001, 0])square([51.7, 30.700000000000003]);
                                 }
 
-                                translate([0, 53.7, 0])difference(){
-                                    translate([-24.35, -24.35, 0])union()translate([2.5, 2.5, 0])hull(){
-                                            circle(d=5,$fn=64);
-                                            translate([43.7, 0, 0])circle(d=5,$fn=64);
-                                            translate([0, 43.7, 0])circle(d=5,$fn=64);
-                                            translate([43.7, 43.7, 0])circle(d=5,$fn=64);
-                                          }
-
-                                    translate([-22.825, -22.825, 0])union()translate([2.5, 2.5, 0])hull(){
-                                            circle(d=5,$fn=64);
-                                            translate([40.65, 0, 0])circle(d=5,$fn=64);
-                                            translate([0, 40.65, 0])circle(d=5,$fn=64);
-                                            translate([40.65, 40.65, 0])circle(d=5,$fn=64);
-                                          }
-
-                                    translate([-15.350000000000001, -25.85, 0])square([30.700000000000003, 51.7]);
-                                    translate([-25.85, -15.350000000000001, 0])square([51.7, 30.700000000000003]);
-                                  }
-
                                 translate([53.7, 0, 0])difference(){
                                     translate([-24.35, -24.35, 0])union()translate([2.5, 2.5, 0])hull(){
                                             circle(d=5,$fn=64);
@@ -572,7 +467,7 @@ module Container_num_x_1_5_num_y_1_5(){
                                     translate([-25.85, -15.350000000000001, 0])square([51.7, 30.700000000000003]);
                                   }
 
-                                translate([53.7, 53.7, 0])difference(){
+                                translate([107.4, 0, 0])difference(){
                                     translate([-24.35, -24.35, 0])union()translate([2.5, 2.5, 0])hull(){
                                             circle(d=5,$fn=64);
                                             translate([43.7, 0, 0])circle(d=5,$fn=64);
@@ -605,13 +500,6 @@ module Container_num_x_1_5_num_y_1_5(){
                                     translate([-24.85, -21.6, 0])square([1.6, 43.2]);
                                   }
 
-                                  translate([0, 53.7, 0])union(){
-                                      translate([-21.6, 23.25, 0])square([43.2, 1.6]);
-                                      translate([-21.6, -24.85, 0])square([43.2, 1.6]);
-                                      translate([23.25, -21.6, 0])square([1.6, 43.2]);
-                                      translate([-24.85, -21.6, 0])square([1.6, 43.2]);
-                                    }
-
                                   translate([53.7, 0, 0])union(){
                                       translate([-21.6, 23.25, 0])square([43.2, 1.6]);
                                       translate([-21.6, -24.85, 0])square([43.2, 1.6]);
@@ -619,7 +507,7 @@ module Container_num_x_1_5_num_y_1_5(){
                                       translate([-24.85, -21.6, 0])square([1.6, 43.2]);
                                     }
 
-                                  translate([53.7, 53.7, 0])union(){
+                                  translate([107.4, 0, 0])union(){
                                       translate([-21.6, 23.25, 0])square([43.2, 1.6]);
                                       translate([-21.6, -24.85, 0])square([43.2, 1.6]);
                                       translate([23.25, -21.6, 0])square([1.6, 43.2]);
@@ -632,19 +520,19 @@ module Container_num_x_1_5_num_y_1_5(){
 
                     }
 
-                  translate([-1.25, -1.25, 41.5])color("HotPink")cube([2.5, 2.5, 3.6]);
+                  translate([-1.25, -1.25, 41.5])color("OrangeRed")cube([2.5, 2.5, 3.6]);
                 }
 
-              translate([-1.25, -1.25, 41.5])color("HotPink")cube([2.5, 2.5, 3.6]);
+              translate([-1.25, -1.25, 41.5])color("OrangeRed")cube([2.5, 2.5, 3.6]);
             }
 
-          translate([-1.25, -1.25, 41.5])color("HotPink")cube([2.5, 2.5, 3.6]);
+          translate([-1.25, -1.25, 41.5])color("OrangeRed")cube([2.5, 2.5, 3.6]);
         }
 
-      translate([-1.25, -1.25, 41.5])color("HotPink")cube([2.5, 2.5, 3.6]);
+      translate([-1.25, -1.25, 41.5])color("OrangeRed")cube([2.5, 2.5, 3.6]);
     }
 
   }
 }
 $fn=64;
-Container_num_x_1_5_num_y_1_5();
+Container_num_x_2_5_num_y_0_5();
