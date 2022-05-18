@@ -61,10 +61,9 @@ class Container < Part
     # cut away the tiny corners on parts that possibly have both intersections
     refbase = cube(x: @x - (@x-@x_inner)/2.0, y: @y - (@y- @y_inner) / 2.0, z: @z).nc
     if diff_x > 0 && diff_y > 0
-      grid_bits += corner_cleanup
-      grid_bits += corner_cleanup.movea(:top_left, refbase)
-      grid_bits += corner_cleanup.movea(:bottom_right, refbase)
-      grid_bits += corner_cleanup.movea(:top_right, refbase)
+      grid_bits.at(refbase.corners, refbase) do
+        grid_bits += corner_cleanup
+      end
     end
 
     res -= grid_bits
