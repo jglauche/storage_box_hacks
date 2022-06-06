@@ -1,7 +1,7 @@
 module ContainerBaseCalibration(){
   difference(){
-    translate([79.55000000000001, 25.85, 0])color("red")difference(){
-          translate([-80.05000000000001, -26.35, 0])union()linear_extrude(height=1.5)translate([2.5, 2.5, 0])hull(){
+    translate([79.55, 25.85, 0])color("red")difference(){
+          translate([-80.05, -26.35, 0])union()linear_extrude(height=1.5)translate([2.5, 2.5, 0])hull(){
                     circle(d=5,$fn=64);
                     translate([155.1, 0, 0])circle(d=5,$fn=64);
                     translate([0, 47.7, 0])circle(d=5,$fn=64);
@@ -15,7 +15,7 @@ module ContainerBaseCalibration(){
                     translate([45, 45, 0])circle(d=5,$fn=64);
                   }
 
-          translate([-66.05000000000001, -12.350000000000001, 0])union()translate([2.5, 2.5, 0])hull(){
+          translate([-66.05, -12.35, 0])union()translate([2.5, 2.5, 0])hull(){
                   circle(d=5,$fn=64);
                   translate([127.1, 0, 0])circle(d=5,$fn=64);
                   translate([0, 19.7, 0])circle(d=5,$fn=64);
@@ -55,8 +55,8 @@ module ContainerBaseCalibration(){
                           translate([40.65, 40.65, 0])circle(d=5,$fn=64);
                         }
 
-                  translate([-15.350000000000001, -25.85, 0])square([30.700000000000003, 51.7]);
-                  translate([-25.85, -15.350000000000001, 0])square([51.7, 30.700000000000003]);
+                  translate([-15.35, -25.85, 0])square([30.700000000000003, 51.7]);
+                  translate([-25.85, -15.35, 0])square([51.7, 30.700000000000003]);
                 }
 
                 difference(){
@@ -74,8 +74,8 @@ module ContainerBaseCalibration(){
                           translate([40.65, 40.65, 0])circle(d=5,$fn=64);
                         }
 
-                  translate([-15.350000000000001, -25.85, 0])square([30.700000000000003, 51.7]);
-                  translate([-25.85, -15.350000000000001, 0])square([51.7, 30.700000000000003]);
+                  translate([-15.35, -25.85, 0])square([30.700000000000003, 51.7]);
+                  translate([-25.85, -15.35, 0])square([51.7, 30.700000000000003]);
                 }
 
                 translate([53.7, 0, 0])difference(){
@@ -93,8 +93,8 @@ module ContainerBaseCalibration(){
                             translate([40.65, 40.65, 0])circle(d=5,$fn=64);
                           }
 
-                    translate([-15.350000000000001, -25.85, 0])square([30.700000000000003, 51.7]);
-                    translate([-25.85, -15.350000000000001, 0])square([51.7, 30.700000000000003]);
+                    translate([-15.35, -25.85, 0])square([30.700000000000003, 51.7]);
+                    translate([-25.85, -15.35, 0])square([51.7, 30.700000000000003]);
                   }
 
                 translate([107.4, 0, 0])difference(){
@@ -112,8 +112,8 @@ module ContainerBaseCalibration(){
                             translate([40.65, 40.65, 0])circle(d=5,$fn=64);
                           }
 
-                    translate([-15.350000000000001, -25.85, 0])square([30.700000000000003, 51.7]);
-                    translate([-25.85, -15.350000000000001, 0])square([51.7, 30.700000000000003]);
+                    translate([-15.35, -25.85, 0])square([30.700000000000003, 51.7]);
+                    translate([-25.85, -15.35, 0])square([51.7, 30.700000000000003]);
                   }
 
               }

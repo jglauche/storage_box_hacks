@@ -91,15 +91,90 @@ class StorageBoxHacks < Project
     Container.new({num_x: 2, num_y: 1.5})
   end
 
+  def container_2x2
+    Container.new({num_x: 2, num_y: 2})
+  end
+
   def container_2_5x0_5
     Container.new({num_x: 2.5, num_y: 0.5})
+  end
+
+  def container_2_5x1
+    Container.new({num_x: 2.5, num_y: 1})
+  end
+
+
+  def container_2_5x1_5
+    Container.new({num_x: 2.5, num_y: 1.5})
+  end
+
+  def container_2_5x2
+    Container.new({num_x: 2.5, num_y: 2})
+  end
+
+  def container_2_5x2_5
+    Container.new({num_x: 2.5, num_y: 2.5})
   end
 
   def container_3x0_5
     Container.new({num_x: 3.0, num_y: 0.5})
   end
 
+  def container_3x1
+    Container.new({num_x: 3.0, num_y: 1})
+  end
 
+  def container_3x1_5
+    Container.new({num_x: 3.0, num_y: 1.5})
+  end
+
+  def container_3x2
+    Container.new({num_x: 3.0, num_y: 2.0})
+  end
+
+  def container_3x2_5
+    Container.new({num_x: 3.0, num_y: 2.5})
+  end
+
+  def container_3x3
+    Container.new({num_x: 3.0, num_y: 3.0})
+  end
+
+  def container_3_5x3_5
+    Container.new({num_x: 3.5, num_y: 3.5})
+  end
+
+  def container_4x0_5
+    Container.new({num_x: 4, num_y: 0.5})
+  end
+
+  def container_4x1
+    Container.new({num_x: 4, num_y: 1})
+  end
+
+  def container_4x1_5
+    Container.new({num_x: 4, num_y: 1.5})
+  end
+
+  def container_4x2
+    Container.new({num_x: 4, num_y: 2})
+  end
+
+  def container_4x2_5
+    Container.new({num_x: 4, num_y: 2.5})
+  end
+
+  def container_4x3
+    Container.new({num_x: 4, num_y: 3})
+  end
+
+  def container_4x3_5
+    Container.new({num_x: 4, num_y: 3.5})
+  end
+
+  def container_4x4
+    Container.new({num_x: 4, num_y: 4})
+  end
 
 
 

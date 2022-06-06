@@ -80,9 +80,9 @@ module SmdDispenser_strip_w_0_6(){
             translate([22.35, 39.150000000000006, -0.002])union(){
                 translate([6.368163355566235e-16, -35.400000000000006, -0.002])union(){
                     translate([0, 0, -0.002])Path();
-                    translate([0, 15.000000000000004, 0])hull(){
+                    translate([0, 15, 0])hull(){
                         translate([0, 0, -0.1])cylinder(d=32.9,h=11.208,$fn=132);
-                        translate([61.19999999999999, 0, -0.1])cylinder(d=32.9,h=11.408,$fn=132);
+                        translate([61.2, 0, -0.1])cylinder(d=32.9,h=11.408,$fn=132);
                       }
 
                   }
@@ -118,7 +118,7 @@ module SmdDispenser_strip_w_0_6(){
           translate([93.5, 0, -0.1])cube([5.5, 2.05, 13]);
         }
 
-    translate([0, 0, -5])mirror([0, 1, 0])rotate([90, 0, 0])translate([-2.4000000000000057, 0, -1.5])GridSegment_extra_w_1_0_extra_len_2_h_1_5_w_2_08_repeat_x_2_repeat_y_1_lid_extra_w_1_0_lid_extra_h_0_4_no_bottom_true();
+    translate([0, 0, -5])mirror([])rotate([90, 0, 0])translate([-2.40000000000001, 0, -1.5])GridSegment_extra_w_1_0_extra_len_2_h_1_5_w_2_08_repeat_x_2_repeat_y_1_lid_extra_w_1_0_lid_extra_h_0_4_no_bottom_true();
     translate([47.5, 40.1, -0.002])color("purple")cube([6, 6, 11.608]);
   }
 }
