@@ -50,6 +50,15 @@ class StorageBoxHacks < Project
     SmdDispenser.new({ strip_h: 16, strip_w: 6.0 })
   end
 
+  def smd_dispenser_24_4
+    SmdDispenser.new({ strip_h: 24, strip_w: 4.0 })
+  end
+
+  def smd_dispenser_48_4
+    SmdDispenser.new({ strip_h: 48, strip_w: 4.0 })
+  end
+
+
 
   def coin_battery_holder
     CoinBatteryHolder.new(config)

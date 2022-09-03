@@ -856,16 +856,16 @@ module Container_num_x_2_5_num_y_1_5(){
 
                     }
 
-                  translate([-1.25, -1.25, 41.5])color("Aquamarine")cube([2.5, 2.5, 3.6]);
+                  translate([-1.25, -1.25, 41.5])color("DarkOrchid")cube([2.5, 2.5, 3.6]);
                 }
 
-              translate([-1.25, -1.25, 41.5])color("Aquamarine")cube([2.5, 2.5, 3.6]);
+              translate([-1.25, -1.25, 41.5])color("DarkOrchid")cube([2.5, 2.5, 3.6]);
             }
 
-          translate([-1.25, -1.25, 41.5])color("Aquamarine")cube([2.5, 2.5, 3.6]);
+          translate([-1.25, -1.25, 41.5])color("DarkOrchid")cube([2.5, 2.5, 3.6]);
         }
 
-      translate([-1.25, -1.25, 41.5])color("Aquamarine")cube([2.5, 2.5, 3.6]);
+      translate([-1.25, -1.25, 41.5])color("DarkOrchid")cube([2.5, 2.5, 3.6]);
     }
 
   }
