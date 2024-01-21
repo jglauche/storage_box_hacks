@@ -2,6 +2,8 @@
 require "jenncad"
 include JennCad
 
+BIG_CONTAINER_Z = 63
+
 class StorageBoxHacks < Project
 
   def initialize
@@ -184,6 +186,23 @@ class StorageBoxHacks < Project
   def container_4x4
     Container.new({num_x: 4, num_y: 4})
   end
+
+  # big containers for EuroPlus Pro >K<44.76/19
+  # FIXME: the bttoms of the containers is different - needs to be fixed
+
+  # NOTE: the left one has a different footprint - need to be checekd
+  def big_container_1x1
+     Container.new({num_x: 1, num_y: 1, z: BIG_CONTAINER_Z})
+  end
+
+  def big_container_1x1_5
+     Container.new({num_x: 1, num_y: 1.5, z: BIG_CONTAINER_Z})
+  end
+
+  def big_container_1x2
+     Container.new({num_x: 1, num_y: 2, z: BIG_CONTAINER_Z})
+  end
+
 
 
 

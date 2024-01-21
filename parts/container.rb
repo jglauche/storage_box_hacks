@@ -24,7 +24,7 @@ class Container < Part
     @y = @size * @num_y - @shrink
 
 
-    @z = 45
+    @z = opts[:z] || 45
     @d = 5
     @inner_d = 2
 
